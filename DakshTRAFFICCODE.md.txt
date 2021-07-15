@@ -1,0 +1,2176 @@
+#include<iostream>
+#include<graphics.h>
+#include<windows.h>
+#include<conio.h>
+
+using namespace std;
+
+int main()
+{
+	
+	DWORD screenWidth =GetSystemMetrics(SM_CXSCREEN);
+	DWORD screenHeight =GetSystemMetrics(SM_CXSCREEN);
+	initwindow(screenWidth,screenHeight,"CITY TRAFFIC LIGHT PROJECT ",-2,-3);
+	char a[15];
+	char s[15];
+	char e[15];
+	int c;
+	int circle_posf=1360;//first circle of cyvle
+	int circle_poss=1500;//second circle of cycle
+	int linetop_x1=1402;
+	int linetop_x2=1470;
+	int lineright_x1=1470;
+	int lineright_x2=1500;
+	int linebotm_x1=1500;
+	int linebotm_x2=1430;
+	int lineleft_x1=1430;
+	int lineleft_x2=1402;
+	int linehandleleft_x1=1360;
+	int linehandleleft_x2=1430;
+	int linehandletop_x1=1430;
+	int linehandletop_x2=1445;
+	int lineseat_x1=1470;
+	int lineseat_x2=1462;
+	int lineseatver_x1=1473;
+	int lineseatver_x2=1450;
+	char q[15];
+	char cy[15];
+	int page=0;
+	char intro[50];
+
+	
+		d:									
+														
+														
+							
+							
+								
+						            // loading  animation//
+						            
+						            for(int loa=0;loa<=490;loa++)
+						            {	
+						            outtextxy(550,330,"LOADING...");
+						           	
+									   setfillstyle(1,RED);
+						         	  
+									   floodfill(550,1050,WHITE);
+								    
+									bar(551+loa,351,551,390);
+								    
+								    if(loa <100)
+								    delay(20);
+								   
+								    if(loa > 100 && loa <200)
+								    delay(90);
+								   
+								    if(loa >200 && loa < 300)
+								    delay(20);	
+								
+									if(loa > 300 && loa < 490)
+									delay(15);
+									
+								
+									}cleardevice();
+									
+						           //loading animation finished
+						            
+						            
+						            // welcome screen code
+						        for(int x=0; x<=900 ; x++)
+								         
+									{
+								setfillstyle(1,BLACK);
+								bar(0,100,480,180); //welcome rectangle
+								outtextxy(0+x,110,"ABOUT  PROJECT ! ");
+								
+										
+									
+									outtextxy(0+x,280,"============================================");
+									outtextxy(0+x,290," --- WELCOME TO CITY-TRAFFIC-LIGHT-PROJECT--- ");
+								//nameing animation bar
+									outtextxy(0+x,410,"MADE BY : [ DAKSH KHOSLA AND HARPAL SINGH ]") ;
+									outtextxy(0+x,430,"============================================");
+						            floodfill(55,1050,WHITE);
+							    	delay(5);
+									}
+						 				cleardevice();
+						            //welcome screen code finished
+						            			
+						           	 
+						            
+						            
+						            
+						            
+						            
+						            
+						            
+						            
+						            
+						//car code
+						
+	//wheel
+	circle(145,595,27);//first wheel
+	setfillstyle(LTSLASH_FILL,RED);//color of first wheel
+	floodfill(145,595,WHITE);
+ circle(280,595,27);//second wheel
+ setfillstyle(LTSLASH_FILL,RED);//color of second wheel 
+	floodfill(280,595,WHITE);
+ 
+ circle(145,595,8);//mid first
+ circle(280,595,8);//mid second
+ //line
+ line(70,592,110,592);//line before arc
+ arc(145,590,0,188,35);//arc first wheel
+ line(180,592,244,592);//line after first arc
+ arc(280,590,0,187,35);//arc second wheel
+ line(315,592,395,592);//line after second arc
+ //back line x constant
+ line(70,592,70,555);//upward line
+ line(70,555,120,540);//slant line on first wheel
+ line(120,540,144,505);//2nd slant line
+ line(144,505,295,505);//roof line of car
+ line(295,505,335,545);//slant line after roof
+ line(335,545,395,553);//bonut slant line
+ line(395,553,395,592);//end line of bonut
+ //window lines
+ line(145,540,220,540);//last window bottom line
+ line(145,540,160,515);//slant line of last window
+ line(160,515,220,515);//upper line 
+ line(220,515,220,540);//front line
+ //front winddow
+ line(235,515,235,540);//starting line of first window
+ line(235,515,285,515);//upper line of window
+ line(235,540,310,540);//bottom line of window
+ line(285,515,310,540);//front line of first window
+      												
+      												//car code finished
+      												
+      												                                               //grass on road
+ ellipse(20,480,170,230,10,15);//arc 1
+ ellipse(25,480,170,210,10,15);
+ ellipse(10,476,250,20,10,15);//
+ ellipse(40,480,170,230,10,15);
+ ellipse(45,480,170,210,10,15);
+ ellipse(30,476,250,20,10,15);//
+ ellipse(60,480,170,230,10,15);
+ ellipse(65,480,170,210,10,15);
+ ellipse(50,476,250,20,10,15);//
+ //
+ ellipse(75,480,170,230,10,15);//arc 1
+ ellipse(80,480,170,210,10,15);
+ ellipse(65,476,250,20,10,15);//
+ ellipse(95,480,170,230,10,15);
+ ellipse(100,480,170,210,10,15);
+ ellipse(85,476,250,20,10,15);//
+ ellipse(115,480,170,230,10,15);
+ ellipse(120,480,170,210,10,15);
+ ellipse(105,476,250,20,10,15);//
+ ellipse(135,480,170,230,10,15);
+ ellipse(140,480,170,210,10,15);
+ ellipse(125,476,250,20,10,15);//
+ //after home road
+                                    ellipse(210,480,170,230,10,15);//arc 1
+ ellipse(215,480,170,210,10,15);
+                    ellipse(200,476,250,20,10,15);//
+ ellipse(230,480,170,230,10,15);//arc 2
+ ellipse(235,480,170,210,10,15);
+                     ellipse(220,476,250,20,10,15);//
+ ellipse(250,480,170,230,10,15);
+ ellipse(255,480,170,210,10,15);
+                     ellipse(240,476,250,20,10,15);//
+ ellipse(270,480,170,230,10,15);
+ ellipse(275,480,170,210,10,15);
+                      ellipse(260,476,250,20,10,15);//
+ ellipse(290,480,170,230,10,15);
+ ellipse(295,480,170,210,10,15);
+                       ellipse(280,476,250,20,10,15);//
+                                  ellipse(310,480,170,230,10,15);//arc 1
+ ellipse(315,480,170,210,10,15);
+                  ellipse(300,476,250,20,10,15);
+ ellipse(330,480,170,230,10,15);//arc 2
+ ellipse(335,480,170,210,10,15);
+                  ellipse(320,476,250,20,10,15);//
+ ellipse(350,480,170,230,10,15);
+ ellipse(355,480,170,210,10,15);
+                  ellipse(340,476,250,20,10,15);//
+ ellipse(370,480,170,230,10,15);
+ ellipse(375,480,170,210,10,15);
+                  ellipse(360,476,250,20,10,15);//
+ ellipse(390,480,170,230,10,15);
+ ellipse(395,480,170,210,10,15);
+                  ellipse(380,476,250,20,10,15);//
+                                     ellipse(410,480,170,230,10,15);//arc 1
+ ellipse(415,480,170,210,10,15);
+                  ellipse(400,476,250,20,10,15);//
+ ellipse(430,480,170,230,10,15);//arc 2
+ ellipse(435,480,170,210,10,15);
+                   ellipse(420,476,250,20,10,15);//
+                                       ellipse(490,480,170,230,10,15);//arc 1
+ ellipse(495,480,170,210,10,15);
+ ellipse(480,476,250,20,10,15);//
+                                       ellipse(510,480,170,230,10,15);//arc 1
+ ellipse(515,480,170,210,10,15);
+                    ellipse(500,476,250,20,10,15);//
+ ellipse(530,480,170,230,10,15);//arc 2
+ ellipse(535,480,170,210,10,15);
+                    ellipse(520,476,250,20,10,15);//
+ ellipse(550,480,170,230,10,15);
+ ellipse(555,480,170,210,10,15);
+                    ellipse(540,476,250,20,10,15);//
+ ellipse(570,480,170,230,10,15);
+ ellipse(575,480,170,210,10,15);
+                    ellipse(560,476,250,20,10,15);//
+ ellipse(590,480,170,230,10,15);
+ ellipse(595,480,170,210,10,15);
+                    ellipse(580,476,250,20,10,15);//
+ 
+  ellipse(610,480,170,230,10,15);//arc 1
+ ellipse(615,480,170,210,10,15);
+ ellipse(600,476,250,20,10,15);//
+ ellipse(630,480,170,230,10,15);//arc 2
+ ellipse(635,480,170,210,10,15);
+ ellipse(620,476,250,20,10,15);//
+ ellipse(650,480,170,230,10,15);
+ ellipse(655,480,170,210,10,15);
+ ellipse(640,476,250,20,10,15);//
+ ellipse(670,480,170,230,10,15);
+ ellipse(675,480,170,210,10,15);
+ ellipse(660,476,250,20,10,15);//
+ ellipse(690,480,170,230,10,15);
+ ellipse(695,480,170,210,10,15);
+  ellipse(710,480,170,230,10,15);//arc 1
+ ellipse(715,480,170,210,10,15);
+ ellipse(700,476,250,20,10,15);//
+ ellipse(730,480,170,230,10,15);//arc 2
+ ellipse(735,480,170,210,10,15);
+ ellipse(720,476,250,20,10,15);//
+ ellipse(750,480,170,230,10,15);
+ ellipse(755,480,170,210,10,15);
+ ellipse(740,476,250,20,10,15);//
+ ellipse(770,480,170,230,10,15);
+ ellipse(775,480,170,210,10,15);
+ ellipse(760,476,250,20,10,15);//
+ ellipse(790,480,170,230,10,15);
+ ellipse(795,480,170,210,10,15);
+  ellipse(810,480,170,230,10,15);//arc 1
+ ellipse(815,480,170,210,10,15);
+ ellipse(800,476,250,20,10,15);//
+ ellipse(830,480,170,230,10,15);//arc 2
+ ellipse(835,480,170,210,10,15);
+ ellipse(820,476,250,20,10,15);//
+ ellipse(850,480,170,230,10,15);
+ ellipse(855,480,170,210,10,15);
+ ellipse(840,476,250,20,10,15);//
+ ellipse(870,480,170,230,10,15);
+ ellipse(875,480,170,210,10,15);
+ ellipse(860,476,250,20,10,15);//
+ ellipse(890,480,170,230,10,15);
+ ellipse(895,480,170,210,10,15);
+ ellipse(880,476,250,20,10,15);//
+   ellipse(910,480,170,230,10,15);//arc 1
+ ellipse(915,480,170,210,10,15);
+ ellipse(800,476,250,20,10,15);//
+ ellipse(930,480,170,230,10,15);//arc 2
+ ellipse(935,480,170,210,10,15);
+ ellipse(920,476,250,20,10,15);//
+ ellipse(950,480,170,230,10,15);
+ ellipse(955,480,170,210,10,15);
+ ellipse(940,476,250,20,10,15);//
+ ellipse(970,480,170,230,10,15);
+ ellipse(975,480,170,210,10,15);
+ ellipse(960,476,250,20,10,15);//
+ ellipse(990,480,170,230,10,15);
+ ellipse(995,480,170,210,10,15);
+ ellipse(980,476,250,20,10,15);//
+   ellipse(1010,480,170,230,10,15);//arc 1
+ ellipse(1015,480,170,210,10,15);
+ ellipse(1000,476,250,20,10,15);//
+ ellipse(1030,480,170,230,10,15);//arc 2
+ ellipse(1035,480,170,210,10,15);
+ ellipse(1020,476,250,20,10,15);//
+ ellipse(1050,480,170,230,10,15);
+ ellipse(1055,480,170,210,10,15);
+ ellipse(1040,476,250,20,10,15);//
+ ellipse(1070,480,170,230,10,15);
+ ellipse(1075,480,170,210,10,15);
+ ellipse(1060,476,250,20,10,15);//
+ ellipse(1090,480,170,230,10,15);
+ ellipse(1095,480,170,210,10,15);
+ ellipse(1080,476,250,20,10,15);//
+   ellipse(1110,480,170,230,10,15);//arc 1
+ ellipse(1115,480,170,210,10,15);
+ ellipse(1100,476,250,20,10,15);//
+ ellipse(1130,480,170,230,10,15);//arc 2
+ ellipse(1135,480,170,210,10,15);
+ ellipse(1120,476,250,20,10,15);//
+ ellipse(1150,480,170,230,10,15);
+ ellipse(1155,480,170,210,10,15);
+ ellipse(1140,476,250,20,10,15);//
+ ellipse(1170,480,170,230,10,15);
+ ellipse(1175,480,170,210,10,15);
+ ellipse(1160,476,250,20,10,15);//
+ ellipse(1190,480,170,230,10,15);
+ ellipse(1195,480,170,210,10,15);
+ ellipse(1180,476,250,20,10,15);//
+    ellipse(1210,480,170,230,10,15);//arc 1
+ ellipse(1215,480,170,210,10,15);
+ ellipse(1200,476,250,20,10,15);//
+ ellipse(1230,480,170,230,10,15);//arc 2
+ ellipse(1235,480,170,210,10,15);
+ ellipse(1220,476,250,20,10,15);//
+ ellipse(1250,480,170,230,10,15);
+ ellipse(1255,480,170,210,10,15);
+ ellipse(1240,476,250,20,10,15);//
+ ellipse(1270,480,170,230,10,15);
+ ellipse(1275,480,170,210,10,15);
+ ellipse(1260,476,250,20,10,15);//
+ ellipse(1290,480,170,230,10,15);
+ ellipse(1295,480,170,210,10,15);
+ ellipse(1280,476,250,20,10,15);//
+    ellipse(1310,480,170,230,10,15);//arc 1
+ ellipse(1315,480,170,210,10,15);
+ ellipse(1300,476,250,20,10,15);//
+ ellipse(1330,480,170,230,10,15);//arc 2
+ ellipse(1335,480,170,210,10,15);
+ ellipse(1320,476,250,20,10,15);//
+ ellipse(1350,480,170,230,10,15);
+ ellipse(1355,480,170,210,10,15);
+ ellipse(1340,476,250,20,10,15);//
+ ellipse(1370,480,170,230,10,15);
+ ellipse(1375,480,170,210,10,15);
+ ellipse(1360,476,250,20,10,15);//
+ ellipse(1390,480,170,230,10,15);
+ ellipse(1395,480,170,210,10,15);
+ ellipse(1380,476,250,20,10,15);//
+    ellipse(1410,480,170,230,10,15);//arc 1
+ ellipse(1415,480,170,210,10,15);
+ ellipse(1400,476,250,20,10,15);//
+ ellipse(1430,480,170,230,10,15);//arc 2
+ ellipse(1435,480,170,210,10,15);
+ ellipse(1420,476,250,20,10,15);//
+ ellipse(1450,480,170,230,10,15);
+ ellipse(1455,480,170,210,10,15);
+ ellipse(1440,476,250,20,10,15);//
+ ellipse(1470,480,170,230,10,15);
+ ellipse(1475,480,170,210,10,15);
+ ellipse(1460,476,250,20,10,15);//
+ ellipse(1490,480,170,230,10,15);
+ ellipse(1495,480,170,210,10,15);
+ ellipse(1480,476,250,20,10,15);//
+                                      // 2nd small tree after building
+ line(550,490,550,450);//left line
+ line(560,490,560,450);//right line
+ ellipse(550,440,130,310,15,15);//arc 1
+ ellipse(545,420,110,245,15,15);//arc 2
+ ellipse(550,410,0,185,15,15);//arc 3
+ ellipse(560,420,310,100,15,15);//arc 4
+ ellipse(560,435,250,20,15,15);//arc 5
+                                          //ending of second small tree
+                           
+                                             // cloud 3
+ ellipse(600,100,110,290,20,20);//a1
+ ellipse(610,90,0,185,25,20);//a2
+ ellipse(655,90,0,185,25,20);//a3
+ ellipse(695,90,0,185,25,20);//a4
+ ellipse(710,100,310,80,25,20);//a5
+ ellipse(700,110,200,0,25,20);//a6
+ ellipse(660,120,180,0,25,20);//a7
+ ellipse(620,110,200,0,25,20);//a8
+                                              //ending of cloud 3
+ // bird 1
+     ellipse(153,150,120,240,10,15);
+     ellipse(135,166,390,130,15,15);
+ //bird 2
+           ellipse(135,123,120,240,10,15);
+           ellipse(117,140,390,130,15,15);
+           //bird 3
+                ellipse(363,123,120,240,10,15);
+                ellipse(345,140,390,130,15,15);
+                //bird 4
+                     ellipse(353,150,120,240,10,15);
+                     ellipse(335,166,390,130,15,15);
+                              //sun
+                              arc(450,78,0,171,30);
+                              line(423,70,405,64);
+                              line(424,63,407,52);
+                              line(427,56,414,41);
+                              line(432,51,425,34);
+                              line(438,48,432,26);
+ line(445,49,442,23);
+ line(452,47,452,21);
+ line(459,50,462,23);
+ line(465,52,472,26);
+ line(471,54,482,31);
+ line(474,60,489,40);
+ line(477,64,498,51);
+ line(480,70,504,61);
+  //starting of home 2
+                                                          line(640,450,780,450);//base line of home
+                                                          line(640,450,640,410);//first line
+                                                          line(680,450,680,410);//second line
+                                                          line(640,410,660,385);// 1 slant line
+                                                          line(660,385,680,410);// 2 slant line
+                     
+																					 //road lines of home
+                         line(640,450,650,490);//1 line
+                         line(680,450,690,490);//2 line
+                                       
+                                       //triangle horizontal lines
+                                             line(660,385,780,385);//top roof line
+                                             line(640,410,750,410);//triangle bottom line
+                                             line(780,385,750,410);//slant line of roof
+                                             line(780,385,780,450);//end line of home
+                                             line(750,410,750,450);//second line of home
+                         //door of home
+                             line(640,410,660,420);
+                             line(640,450,660,440);
+                             line(660,440,660,420);
+          //short line betweein roads
+ line(660,450,662,460);
+ line(662,463,664,472);
+ line(664,474,668,484);
+                //window in home
+ line(700,435,700,425);
+ line(700,425,730,425);
+ line(730,425,730,435);
+ line(730,435,700,435);
+               //lines in between window
+ line(715,425,715,435);
+ line(700,430,730,430);
+            //circle in triangle 
+ circle(660,400,5);
+         //ending of home 2
+                                                                             //starting of building 2
+ line(1000,450,1000,330);//vetical line 1 left
+ line(1100,450,1100,330);//vertical line 2 right
+ line(1000,450,1100,450);//horizontal line bottom
+ line(1000,330,1100,330);//horizontal line upward
+ //building door starting
+ line(1035,450,1035,410);//vetical line left
+ line(1065,450,1065,410);//vetical line right
+ line(1035,410,1065,410);//horizonatl line upward
+ line(1035,450,1045,440);//slant line from bottom
+ line(1035,410,1045,420);//salnt line from upward
+ line(1045,440,1045,420);//connecting line of door
+ //building road starting
+ line(1035,450,1045,490);//left line
+ line(1065,450,1075,490);//right line
+ //short line in between building road
+ line(1049,450,1053,460);//l1
+ line(1053,463,1056,472);//l2
+ line(1056,474,1060,484);//l3
+ //lines in between building vetically
+ line(1020,330,1020,450);//l1
+ line(1040,330,1040,410);//l2
+ line(1060,330,1060,410);//l3
+ line(1080,330,1080,450);//l4
+ //horizontal lines in between building
+ line(1000,430,1035,430);//l1
+ line(1065,430,1100,430);//l1 a
+ line(1000,410,1100,410);//l2
+ line(1000,390,1100,390);//l3
+ line(1000,370,1100,370);//l4
+ line(1000,350,1100,350);//l5
+                                                        // ending of building 2
+                                     // 3rd small tree after building 1
+ line(600,490,600,450);//left line
+ line(610,490,610,450);//right line
+ ellipse(600,440,130,310,15,15);//arc 1
+ ellipse(595,420,110,245,15,15);//arc 2
+ ellipse(600,410,0,185,15,15);//arc 3
+ ellipse(610,420,310,100,15,15);//arc 4
+ ellipse(610,435,250,20,15,15);//arc 5
+                                  //ending of small tree after building 1
+                    //small tree after big tree 1
+  line(920,490,920,450);//left line
+ line(930,490,930,450);//right line
+ ellipse(920,440,130,310,15,15);//arc 1
+ ellipse(915,420,110,245,15,15);//arc 2
+ ellipse(920,410,0,185,15,15);//arc 3
+ ellipse(930,420,310,100,15,15);//arc 4
+ ellipse(930,435,250,20,15,15);//arc 5
+                //emding of small tree after big tree 1
+                            //starting of small tree 2 after big tree
+ line(960,490,960,450);//left line
+ line(970,490,970,450);//right line
+ ellipse(960,440,130,310,15,15);//arc 1
+ ellipse(955,420,110,245,15,15);//arc 2
+ ellipse(960,410,0,185,15,15);//arc 3
+ ellipse(970,420,310,100,15,15);//arc 4
+ ellipse(970,435,250,20,15,15);//arc 5
+                            //ending of small tree 2 after big tree
+                                   //small tree after bilding 2
+  line(1120,490,1120,450);//left line
+ line(1130,490,1130,450);//right line
+ ellipse(1120,440,130,310,15,15);//arc 1
+ ellipse(1115,420,110,245,15,15);//arc 2
+ ellipse(1120,410,0,185,15,15);//arc 3
+ ellipse(1130,420,310,100,15,15);//arc 4
+ ellipse(1130,435,250,20,15,15);//arc 5
+           //ending of after building 2
+                  //starting of 2 small tree after building
+ line(1150,490,1150,450);//left line
+ line(1160,490,1160,450);//right line
+ ellipse(1150,440,130,310,15,15);//arc 1
+ ellipse(1145,420,110,245,15,15);//arc 2
+ ellipse(1150,410,0,185,15,15);//arc 3
+ ellipse(1160,420,310,100,15,15);//arc 4
+ ellipse(1160,435,250,20,15,15);//arc 5
+                     //ending of 2 small tree after building
+                       //tree 3 after building 2
+ line(1190,490,1190,450);//left line
+ line(1200,490,1200,450);//right line
+ ellipse(1190,440,130,310,15,15);//arc 1
+ ellipse(1185,420,110,245,15,15);//arc 2
+ ellipse(1190,410,0,185,15,15);//arc 3
+ ellipse(1200,420,310,100,15,15);//arc 4
+ ellipse(1200,435,250,20,15,15);//arc 5
+                       //ending tree 3 after building 2
+                                //starting tree 4 after building 2
+ line(1240,490,1240,450);//left line
+ line(1250,490,1250,450);//right line
+ ellipse(1240,440,130,310,15,15);//arc 1
+ ellipse(1235,420,110,245,15,15);//arc 2
+ ellipse(1240,410,0,185,15,15);//arc 3
+ ellipse(1250,420,310,100,15,15);//arc 4
+ ellipse(1250,435,250,20,15,15);//arc 5
+                                 //ending tree 4 after building 2
+											                        
+      												//  trees and building object code
+      		// big tree
+ line(0,490,1500,490);//bottom line
+ line(830,490,830,430);//first line
+ line(870,490,870,430);//second line
+ ellipse(813,410,130,310,20,30);//e1
+ ellipse(800,365,90,285,15,30);//e2
+ ellipse(820,340,30,185,28,30);//e3
+ ellipse(860,325,0,185,25,20);//e4
+ ellipse(880,340,310,100,25,30);//e5
+ ellipse(887,380,280,80,30,30);//e6
+ ellipse(877,410,250,20,30,30);//e7
+ //big tree ending
+
+ //small tree starting from back side of car
+ line(80,490,80,450);
+ line(90,490,90,450);
+ ellipse(80,440,130,310,15,15);//e1
+ ellipse(75,420,110,245,15,15);//e2
+ ellipse(80,410,0,185,15,15);//e3
+ ellipse(90,420,310,100,15,15);//e4
+ ellipse(90,435,250,20,15,15);//e5
+ //ending of small tree
+ //starting of home
+ line(140,450,280,450);//base line of home
+ line(140,450,140,410);//first line
+ line(180,450,180,410);//second line
+ line(140,410,160,385);// 1 slant line
+ line(160,385,180,410);// 2 slant line
+ //road lines of home
+ line(140,450,150,490);//1 line
+ line(180,450,190,490);//2 line
+ //triangle horizontal lines
+ line(160,385,280,385);//top roof line
+ line(140,410,250,410);//triangle bottom line
+ line(280,385,250,410);//slant line of roof
+ line(280,385,280,450);//end line of home
+ line(250,410,250,450);//second line of home
+ //door of home
+ line(140,410,160,420);
+ line(140,450,160,440);
+ line(160,440,160,420);
+ //short line betweein roads
+ line(160,450,162,460);
+ line(162,463,164,472);
+ line(164,474,168,484);
+ //window in home
+ line(200,435,200,425);
+ line(200,425,230,425);
+ line(230,425,230,435);
+ line(230,435,200,435);
+ //lines in between window
+ line(215,425,215,435);
+ line(200,430,230,430);
+ //circle in triangle 
+ circle(160,400,5);
+ //small tree afer home 
+ line(300,490,300,450);
+ line(310,490,310,450);
+ ellipse(300,440,130,310,15,15);
+ ellipse(295,420,110,245,15,15);
+ ellipse(300,410,0,185,15,15);
+ ellipse(310,420,310,100,15,15);
+ ellipse(310,435,250,20,15,15);
+ // 2nd small tree after home 
+ line(360,490,360,450);//left line
+ line(370,490,370,450);//right line
+ ellipse(360,440,130,310,15,15);//arc 1
+ ellipse(355,420,110,245,15,15);//arc 2
+ ellipse(360,410,0,185,15,15);//arc 3
+ ellipse(370,420,310,100,15,15);//arc 4
+ ellipse(370,435,250,20,15,15);//arc 5
+ //starting of building
+ line(400,450,400,330);//vetical line 1 left
+ line(500,450,500,330);//vertical line 2 right
+ line(400,450,500,450);//horizontal line bottom
+ line(400,330,500,330);//horizontal line upward
+ //building door starting
+ line(435,450,435,410);//vetical line left
+ line(465,450,465,410);//vetical line right
+ line(435,410,465,410);//horizonatl line upward
+ line(435,450,445,440);//slant line from bottom
+ line(435,410,445,420);//salnt line from upward
+ line(445,440,445,420);//connecting line of door
+ //building road starting
+ line(435,450,445,490);//left line
+ line(465,450,475,490);//right line
+ //short line in between building road
+ line(449,450,453,460);//l1
+ line(453,463,456,472);//l2
+ line(456,474,460,484);//l3
+ //lines in between building vetically
+ line(420,330,420,450);//l1
+ line(440,330,440,410);//l2
+ line(460,330,460,410);//l3
+ line(480,330,480,450);//l4
+ //horizontal lines in between building
+ line(400,430,435,430);//l1
+ line(465,430,500,430);//l1 a
+ line(400,410,500,410);//l2
+ line(400,390,500,390);//l3
+ line(400,370,500,370);//l4
+ line(400,350,500,350);//l5
+ //small tree after building
+ line(520,490,520,450);//left line
+ line(530,490,530,450);//right line
+ ellipse(520,440,130,310,15,15);//arc 1
+ ellipse(515,420,110,245,15,15);//arc 2
+ ellipse(520,410,0,185,15,15);//arc 3
+ ellipse(530,420,310,100,15,15);//arc 4
+ ellipse(530,435,250,20,15,15);//arc 5
+ //starting of cloud 1 making from car side
+ ellipse(150,100,110,290,20,20);//arc 1 from lest side
+ ellipse(160,90,0,185,25,20);//arc 2
+ ellipse(205,90,0,185,25,20);//a3
+ ellipse(245,90,0,185,25,20);//a4
+ ellipse(260,100,310,80,25,20);//a5
+ ellipse(250,110,200,0,25,20);//a6
+ ellipse(210,120,180,0,25,20);//a7
+ ellipse(170,110,200,0,25,20);//a8
+ //cloud 2
+ ellipse(400,100,110,290,20,20);//a1
+ ellipse(410,90,0,185,25,20);//a2
+ ellipse(455,90,0,185,25,20);//a3
+ ellipse(495,90,0,185,25,20);//a4
+ ellipse(510,100,310,80,25,20);//a5
+ ellipse(500,110,200,0,25,20);//a6
+ ellipse(460,120,180,0,25,20);//a7
+ ellipse(420,110,200,0,25,20);//a8
+ 
+ 
+ 
+									  
+ 																// trees and building code finished
+ 																setfillstyle(10,1);
+ 																bar(890,55,1250,250);
+ 																 
+																 
+ 																// INTRODUCTION TEXT ABOUT PROJECT
+														    	outtextxy(1020,55,"ABOUT  PROJECT ! ");
+														    	outtextxy(935,75,"WELCOME TO CITY-TRAFFIC-LIGHT-PROJECT");
+														    	outtextxy(903,135,"MADE BY : [ DAKSH KHOSLA AND HARPAL SINGH ]") ;
+ 															
+ 																
+																 
+																 							
+																							 
+																							 // //introduction finshed //	
+																										//ROAD CODE
+													line(0,490,1600,490);//road up
+													line(0,760,1600,760);//road down
+				//trafic light bottom line
+												
+												line(1464,179,1464,300);
+												//bottom to right line
+											
+												
+												line(1600,299,1464,299);//traffic line 
+											
+											// dot lines start
+										
+											//road dot line with color
+													setfillstyle(1,DARKGRAY);
+												bar(0,620,75,635);
+										
+													
+													setfillstyle(1,DARKGRAY);
+													bar(95,620,170,635);
+												
+													bar(190,620,265,635);
+												
+													bar(285,620,360,635);
+												
+													bar(380,620,455,635);
+														bar(400,620,475,635);
+															bar(495,620,570,635);
+																bar(590,620,665,635);
+																	bar(685,620,760,635);
+																		bar(780,620,855,635);
+																			bar(875,620,950,635);
+																				bar(970,620,1045,635);
+																					bar(1065,620,1140,635);
+																					bar(1160,620,1235,635);
+																					bar(1255,620,1330,635);
+																					bar(1350,620,1425,635);
+																					bar(1445,620,1520,635);
+																					bar(1540,620,1615,635);// road line fineshed
+																				
+																																	//road code finished
+	//light
+																									//traffic code start
+															rectangle(1490,30,1440,180);
+	// circle lights
+															circle(1465,55,25);
+															circle(1465,105,25);
+															circle(1465,155,25);
+
+
+	
+	
+	
+														for(int r=9; r>=0; r--)
+												{
+														
+													setfillstyle(1,RED);
+													floodfill(1465,55,WHITE);
+													outtextxy(1450,50,"STOP");
+													delay(1000);	
+													
+													sprintf(e,"%d SECOND WAIT ",r);
+													outtextxy(1310,50,e);
+													
+													
+												setfillstyle(1,BLACK);
+												floodfill(1465,55,WHITE);		
+												delay(1000);
+											}
+											// turn red countdown to black
+													setfillstyle(1,BLACK);
+													floodfill(1310,50,WHITE);
+	
+	
+	// move
+																	setfillstyle(10,1);
+																		bar(890,55,1250,250);
+ 																 
+																 
+ 																// INTRODUCTION TEXT ABOUT PROJECT
+														    	outtextxy(1020,55,"ABOUT  PROJECT ! ");
+														    	outtextxy(935,75,"WELCOME TO CITY-TRAFFIC-LIGHT-PROJECT");
+														    	outtextxy(903,135,"MADE BY : [ DAKSH KHOSLA AND HARPAL SINGH ]") ;
+ 															
+	
+										for (int i=9;i>=0;i--){
+									
+									
+									setfillstyle(1,YELLOW);
+										floodfill(1465,105,WHITE);
+										outtextxy(1450,100,"HOLD");
+											delay(1000);
+										
+											sprintf(a,"%d SECOND LEFT ",i);
+											outtextxy(1310,100,a);
+											
+													setfillstyle(1,BLACK);
+													floodfill(1465,105,WHITE);
+													delay(1000);
+													
+												}
+												
+													// turn countdown to black
+												setfillstyle(1,BLACK);
+													floodfill(1400,100,WHITE);
+													
+													// intro rectangle
+													setfillstyle(10,1);
+														bar(890,55,1240,250);
+ 																 
+															 
+ 																// INTRODUCTION TEXT ABOUT PROJECT
+														    	outtextxy(1020,55,"ABOUT  PROJECT ! ");
+														    	outtextxy(935,75,"WELCOME TO CITY-TRAFFIC-LIGHT-PROJECT");
+														    	outtextxy(903,135,"MADE BY : [DAKSH KHOSLA AND HARPAL SINGH]") ;
+ 															
+														
+													
+													// green loop
+												for (int g=2; g>=0; g-- )	{
+												
+												setfillstyle(1,GREEN);
+														floodfill(1465,155,WHITE);
+															outtextxy(1457,150,"GO");
+																delay(500);										
+													}
+														// turn green countdown to black
+																								//traffic code finished
+												
+			  
+for(int c=0;c<1600;c++)		{
+	
+							
+															setactivepage(page);
+															setvisualpage(1-page);
+															cleardevice();						
+																
+	circle(145+c,595,27);//first wheel
+	setfillstyle(LTSLASH_FILL,RED);//color of first wheel
+	floodfill(145+c,595,WHITE);
+ 	circle(280+c,595,27);//second wheel
+  	setfillstyle(LTSLASH_FILL,RED);//color of second wheel 
+	floodfill(280+c,595,WHITE);
+ circle(145+c,595,8);//mid first
+ circle(280+c,595,8);//mid second
+ //line
+ line(70+c,592,110+c,592);//line before arc
+ arc(145+c,590,0,188,35);//arc first wheel
+ line(180+c,592,244+c,592);//line after first arc
+ arc(280+c,590,0,187,35);//arc second wheel
+ line(315+c,592,395+c,592);//line after second arc
+ //back line x constant
+ line(70+c,592,70+c,555);//upward line
+ line(70+c,555,120+c,540);//slant line on first wheel
+ line(120+c,540,144+c,505);//2nd slant line
+ line(144+c,505,295+c,505);//roof line of car
+ line(295+c,505,335+c,545);//slant line after roof
+ line(335+c,545,395+c,553);//bonut slant line
+ line(395+c,553,395+c,592);//end line of bonut
+ //window lines
+ line(145+c,540,220+c,540);//last window bottom line
+ line(145+c,540,160+c,515);//slant line of last window
+ line(160+c,515,220+c,515);//upper line 
+ line(220+c,515,220+c,540);//front line
+ //front winddow
+ line(235+c,515,235+c,540);//starting line of first window
+ line(235+c,515,285+c,515);//upper line of window
+ line(235+c,540,310+c,540);//bottom line of window
+ line(285+c,515,310+c,540);//front line of first window
+		
+		// time of car speed
+		delay(10);
+		page=1-page;
+		
+		
+		//  trees and building object code
+      		// big tree
+ line(0,490,1500,490);//bottom line
+ line(830,490,830,430);//first line
+ line(870,490,870,430);//second line
+ ellipse(813,410,130,310,20,30);//e1
+ ellipse(800,365,90,285,15,30);//e2
+ ellipse(820,340,30,185,28,30);//e3
+ ellipse(860,325,0,185,25,20);//e4
+ ellipse(880,340,310,100,25,30);//e5
+ ellipse(887,380,280,80,30,30);//e6
+ ellipse(877,410,250,20,30,30);//e7
+ //big tree ending
+
+ //small tree starting from back side of car
+ line(80,490,80,450);
+ line(90,490,90,450);
+ ellipse(80,440,130,310,15,15);//e1
+ ellipse(75,420,110,245,15,15);//e2
+ ellipse(80,410,0,185,15,15);//e3
+ ellipse(90,420,310,100,15,15);//e4
+ ellipse(90,435,250,20,15,15);//e5
+ //ending of small tree
+ //starting of home
+ line(140,450,280,450);//base line of home
+ line(140,450,140,410);//first line
+ line(180,450,180,410);//second line
+ line(140,410,160,385);// 1 slant line
+ line(160,385,180,410);// 2 slant line
+ //road lines of home
+ line(140,450,150,490);//1 line
+ line(180,450,190,490);//2 line
+ //triangle horizontal lines
+ line(160,385,280,385);//top roof line
+ line(140,410,250,410);//triangle bottom line
+ line(280,385,250,410);//slant line of roof
+ line(280,385,280,450);//end line of home
+ line(250,410,250,450);//second line of home
+ //door of home
+ line(140,410,160,420);
+ line(140,450,160,440);
+ line(160,440,160,420);
+ //short line betweein roads
+ line(160,450,162,460);
+ line(162,463,164,472);
+ line(164,474,168,484);
+ //window in home
+ line(200,435,200,425);
+ line(200,425,230,425);
+ line(230,425,230,435);
+ line(230,435,200,435);
+ //lines in between window
+ line(215,425,215,435);
+ line(200,430,230,430);
+ //circle in triangle 
+ circle(160,400,5);
+ //small tree afer home 
+ line(300,490,300,450);
+ line(310,490,310,450);
+ ellipse(300,440,130,310,15,15);
+ ellipse(295,420,110,245,15,15);
+ ellipse(300,410,0,185,15,15);
+ ellipse(310,420,310,100,15,15);
+ ellipse(310,435,250,20,15,15);
+ // 2nd small tree after home 
+ line(360,490,360,450);//left line
+ line(370,490,370,450);//right line
+ ellipse(360,440,130,310,15,15);//arc 1
+ ellipse(355,420,110,245,15,15);//arc 2
+ ellipse(360,410,0,185,15,15);//arc 3
+ ellipse(370,420,310,100,15,15);//arc 4
+ ellipse(370,435,250,20,15,15);//arc 5
+ //starting of building
+ line(400,450,400,330);//vetical line 1 left
+ line(500,450,500,330);//vertical line 2 right
+ line(400,450,500,450);//horizontal line bottom
+ line(400,330,500,330);//horizontal line upward
+ //building door starting
+ line(435,450,435,410);//vetical line left
+ line(465,450,465,410);//vetical line right
+ line(435,410,465,410);//horizonatl line upward
+ line(435,450,445,440);//slant line from bottom
+ line(435,410,445,420);//salnt line from upward
+ line(445,440,445,420);//connecting line of door
+ //building road starting
+ line(435,450,445,490);//left line
+ line(465,450,475,490);//right line
+ //short line in between building road
+ line(449,450,453,460);//l1
+ line(453,463,456,472);//l2
+ line(456,474,460,484);//l3
+ //lines in between building vetically
+ line(420,330,420,450);//l1
+ line(440,330,440,410);//l2
+ line(460,330,460,410);//l3
+ line(480,330,480,450);//l4
+ //horizontal lines in between building
+ line(400,430,435,430);//l1
+ line(465,430,500,430);//l1 a
+ line(400,410,500,410);//l2
+ line(400,390,500,390);//l3
+ line(400,370,500,370);//l4
+ line(400,350,500,350);//l5
+ //small tree after building
+ line(520,490,520,450);//left line
+ line(530,490,530,450);//right line
+ ellipse(520,440,130,310,15,15);//arc 1
+ ellipse(515,420,110,245,15,15);//arc 2
+ ellipse(520,410,0,185,15,15);//arc 3
+ ellipse(530,420,310,100,15,15);//arc 4
+ ellipse(530,435,250,20,15,15);//arc 5
+ //starting of cloud 1 making from car side
+ ellipse(150,100,110,290,20,20);//arc 1 from lest side
+ ellipse(160,90,0,185,25,20);//arc 2
+ ellipse(205,90,0,185,25,20);//a3
+ ellipse(245,90,0,185,25,20);//a4
+ ellipse(260,100,310,80,25,20);//a5
+ ellipse(250,110,200,0,25,20);//a6
+ ellipse(210,120,180,0,25,20);//a7
+ ellipse(170,110,200,0,25,20);//a8
+ //cloud 2
+ ellipse(400,100,110,290,20,20);//a1
+ ellipse(410,90,0,185,25,20);//a2
+ ellipse(455,90,0,185,25,20);//a3
+ ellipse(495,90,0,185,25,20);//a4
+ ellipse(510,100,310,80,25,20);//a5
+ ellipse(500,110,200,0,25,20);//a6
+ ellipse(460,120,180,0,25,20);//a7
+ ellipse(420,110,200,0,25,20);//a8
+ 																// trees and building code finished
+ 																
+ 																    												                                               //grass on road
+ ellipse(20,480,170,230,10,15);//arc 1
+ ellipse(25,480,170,210,10,15);
+ ellipse(10,476,250,20,10,15);//
+ ellipse(40,480,170,230,10,15);
+ ellipse(45,480,170,210,10,15);
+ ellipse(30,476,250,20,10,15);//
+ ellipse(60,480,170,230,10,15);
+ ellipse(65,480,170,210,10,15);
+ ellipse(50,476,250,20,10,15);//
+ //
+ ellipse(75,480,170,230,10,15);//arc 1
+ ellipse(80,480,170,210,10,15);
+ ellipse(65,476,250,20,10,15);//
+ ellipse(95,480,170,230,10,15);
+ ellipse(100,480,170,210,10,15);
+ ellipse(85,476,250,20,10,15);//
+ ellipse(115,480,170,230,10,15);
+ ellipse(120,480,170,210,10,15);
+ ellipse(105,476,250,20,10,15);//
+ ellipse(135,480,170,230,10,15);
+ ellipse(140,480,170,210,10,15);
+ ellipse(125,476,250,20,10,15);//
+ //after home road
+                                    ellipse(210,480,170,230,10,15);//arc 1
+ ellipse(215,480,170,210,10,15);
+                    ellipse(200,476,250,20,10,15);//
+ ellipse(230,480,170,230,10,15);//arc 2
+ ellipse(235,480,170,210,10,15);
+                     ellipse(220,476,250,20,10,15);//
+ ellipse(250,480,170,230,10,15);
+ ellipse(255,480,170,210,10,15);
+                     ellipse(240,476,250,20,10,15);//
+ ellipse(270,480,170,230,10,15);
+ ellipse(275,480,170,210,10,15);
+                      ellipse(260,476,250,20,10,15);//
+ ellipse(290,480,170,230,10,15);
+ ellipse(295,480,170,210,10,15);
+                       ellipse(280,476,250,20,10,15);//
+                                  ellipse(310,480,170,230,10,15);//arc 1
+ ellipse(315,480,170,210,10,15);
+                  ellipse(300,476,250,20,10,15);
+ ellipse(330,480,170,230,10,15);//arc 2
+ ellipse(335,480,170,210,10,15);
+                  ellipse(320,476,250,20,10,15);//
+ ellipse(350,480,170,230,10,15);
+ ellipse(355,480,170,210,10,15);
+                  ellipse(340,476,250,20,10,15);//
+ ellipse(370,480,170,230,10,15);
+ ellipse(375,480,170,210,10,15);
+                  ellipse(360,476,250,20,10,15);//
+ ellipse(390,480,170,230,10,15);
+ ellipse(395,480,170,210,10,15);
+                  ellipse(380,476,250,20,10,15);//
+                                     ellipse(410,480,170,230,10,15);//arc 1
+ ellipse(415,480,170,210,10,15);
+                  ellipse(400,476,250,20,10,15);//
+ ellipse(430,480,170,230,10,15);//arc 2
+ ellipse(435,480,170,210,10,15);
+                   ellipse(420,476,250,20,10,15);//
+                                       ellipse(490,480,170,230,10,15);//arc 1
+ ellipse(495,480,170,210,10,15);
+ ellipse(480,476,250,20,10,15);//
+                                       ellipse(510,480,170,230,10,15);//arc 1
+ ellipse(515,480,170,210,10,15);
+                    ellipse(500,476,250,20,10,15);//
+ ellipse(530,480,170,230,10,15);//arc 2
+ ellipse(535,480,170,210,10,15);
+                    ellipse(520,476,250,20,10,15);//
+ ellipse(550,480,170,230,10,15);
+ ellipse(555,480,170,210,10,15);
+                    ellipse(540,476,250,20,10,15);//
+ ellipse(570,480,170,230,10,15);
+ ellipse(575,480,170,210,10,15);
+                    ellipse(560,476,250,20,10,15);//
+ ellipse(590,480,170,230,10,15);
+ ellipse(595,480,170,210,10,15);
+                    ellipse(580,476,250,20,10,15);//
+ 
+  ellipse(610,480,170,230,10,15);//arc 1
+ ellipse(615,480,170,210,10,15);
+ ellipse(600,476,250,20,10,15);//
+ ellipse(630,480,170,230,10,15);//arc 2
+ ellipse(635,480,170,210,10,15);
+ ellipse(620,476,250,20,10,15);//
+ ellipse(650,480,170,230,10,15);
+ ellipse(655,480,170,210,10,15);
+ ellipse(640,476,250,20,10,15);//
+ ellipse(670,480,170,230,10,15);
+ ellipse(675,480,170,210,10,15);
+ ellipse(660,476,250,20,10,15);//
+ ellipse(690,480,170,230,10,15);
+ ellipse(695,480,170,210,10,15);
+  ellipse(710,480,170,230,10,15);//arc 1
+ ellipse(715,480,170,210,10,15);
+ ellipse(700,476,250,20,10,15);//
+ ellipse(730,480,170,230,10,15);//arc 2
+ ellipse(735,480,170,210,10,15);
+ ellipse(720,476,250,20,10,15);//
+ ellipse(750,480,170,230,10,15);
+ ellipse(755,480,170,210,10,15);
+ ellipse(740,476,250,20,10,15);//
+ ellipse(770,480,170,230,10,15);
+ ellipse(775,480,170,210,10,15);
+ ellipse(760,476,250,20,10,15);//
+ ellipse(790,480,170,230,10,15);
+ ellipse(795,480,170,210,10,15);
+  ellipse(810,480,170,230,10,15);//arc 1
+ ellipse(815,480,170,210,10,15);
+ ellipse(800,476,250,20,10,15);//
+ ellipse(830,480,170,230,10,15);//arc 2
+ ellipse(835,480,170,210,10,15);
+ ellipse(820,476,250,20,10,15);//
+ ellipse(850,480,170,230,10,15);
+ ellipse(855,480,170,210,10,15);
+ ellipse(840,476,250,20,10,15);//
+ ellipse(870,480,170,230,10,15);
+ ellipse(875,480,170,210,10,15);
+ ellipse(860,476,250,20,10,15);//
+ ellipse(890,480,170,230,10,15);
+ ellipse(895,480,170,210,10,15);
+ ellipse(880,476,250,20,10,15);//
+   ellipse(910,480,170,230,10,15);//arc 1
+ ellipse(915,480,170,210,10,15);
+ ellipse(800,476,250,20,10,15);//
+ ellipse(930,480,170,230,10,15);//arc 2
+ ellipse(935,480,170,210,10,15);
+ ellipse(920,476,250,20,10,15);//
+ ellipse(950,480,170,230,10,15);
+ ellipse(955,480,170,210,10,15);
+ ellipse(940,476,250,20,10,15);//
+ ellipse(970,480,170,230,10,15);
+ ellipse(975,480,170,210,10,15);
+ ellipse(960,476,250,20,10,15);//
+ ellipse(990,480,170,230,10,15);
+ ellipse(995,480,170,210,10,15);
+ ellipse(980,476,250,20,10,15);//
+   ellipse(1010,480,170,230,10,15);//arc 1
+ ellipse(1015,480,170,210,10,15);
+ ellipse(1000,476,250,20,10,15);//
+ ellipse(1030,480,170,230,10,15);//arc 2
+ ellipse(1035,480,170,210,10,15);
+ ellipse(1020,476,250,20,10,15);//
+ ellipse(1050,480,170,230,10,15);
+ ellipse(1055,480,170,210,10,15);
+ ellipse(1040,476,250,20,10,15);//
+ ellipse(1070,480,170,230,10,15);
+ ellipse(1075,480,170,210,10,15);
+ ellipse(1060,476,250,20,10,15);//
+ ellipse(1090,480,170,230,10,15);
+ ellipse(1095,480,170,210,10,15);
+ ellipse(1080,476,250,20,10,15);//
+   ellipse(1110,480,170,230,10,15);//arc 1
+ ellipse(1115,480,170,210,10,15);
+ ellipse(1100,476,250,20,10,15);//
+ ellipse(1130,480,170,230,10,15);//arc 2
+ ellipse(1135,480,170,210,10,15);
+ ellipse(1120,476,250,20,10,15);//
+ ellipse(1150,480,170,230,10,15);
+ ellipse(1155,480,170,210,10,15);
+ ellipse(1140,476,250,20,10,15);//
+ ellipse(1170,480,170,230,10,15);
+ ellipse(1175,480,170,210,10,15);
+ ellipse(1160,476,250,20,10,15);//
+ ellipse(1190,480,170,230,10,15);
+ ellipse(1195,480,170,210,10,15);
+ ellipse(1180,476,250,20,10,15);//
+    ellipse(1210,480,170,230,10,15);//arc 1
+ ellipse(1215,480,170,210,10,15);
+ ellipse(1200,476,250,20,10,15);//
+ ellipse(1230,480,170,230,10,15);//arc 2
+ ellipse(1235,480,170,210,10,15);
+ ellipse(1220,476,250,20,10,15);//
+ ellipse(1250,480,170,230,10,15);
+ ellipse(1255,480,170,210,10,15);
+ ellipse(1240,476,250,20,10,15);//
+ ellipse(1270,480,170,230,10,15);
+ ellipse(1275,480,170,210,10,15);
+ ellipse(1260,476,250,20,10,15);//
+ ellipse(1290,480,170,230,10,15);
+ ellipse(1295,480,170,210,10,15);
+ ellipse(1280,476,250,20,10,15);//
+    ellipse(1310,480,170,230,10,15);//arc 1
+ ellipse(1315,480,170,210,10,15);
+ ellipse(1300,476,250,20,10,15);//
+ ellipse(1330,480,170,230,10,15);//arc 2
+ ellipse(1335,480,170,210,10,15);
+ ellipse(1320,476,250,20,10,15);//
+ ellipse(1350,480,170,230,10,15);
+ ellipse(1355,480,170,210,10,15);
+ ellipse(1340,476,250,20,10,15);//
+ ellipse(1370,480,170,230,10,15);
+ ellipse(1375,480,170,210,10,15);
+ ellipse(1360,476,250,20,10,15);//
+ ellipse(1390,480,170,230,10,15);
+ ellipse(1395,480,170,210,10,15);
+ ellipse(1380,476,250,20,10,15);//
+    ellipse(1410,480,170,230,10,15);//arc 1
+ ellipse(1415,480,170,210,10,15);
+ ellipse(1400,476,250,20,10,15);//
+ ellipse(1430,480,170,230,10,15);//arc 2
+ ellipse(1435,480,170,210,10,15);
+ ellipse(1420,476,250,20,10,15);//
+ ellipse(1450,480,170,230,10,15);
+ ellipse(1455,480,170,210,10,15);
+ ellipse(1440,476,250,20,10,15);//
+ ellipse(1470,480,170,230,10,15);
+ ellipse(1475,480,170,210,10,15);
+ ellipse(1460,476,250,20,10,15);//
+ ellipse(1490,480,170,230,10,15);
+ ellipse(1495,480,170,210,10,15);
+ ellipse(1480,476,250,20,10,15);//
+                                      // 2nd small tree after building
+ line(550,490,550,450);//left line
+ line(560,490,560,450);//right line
+ ellipse(550,440,130,310,15,15);//arc 1
+ ellipse(545,420,110,245,15,15);//arc 2
+ ellipse(550,410,0,185,15,15);//arc 3
+ ellipse(560,420,310,100,15,15);//arc 4
+ ellipse(560,435,250,20,15,15);//arc 5
+                                          //ending of second small tree
+                           
+                                             // cloud 3
+ ellipse(600,100,110,290,20,20);//a1
+ ellipse(610,90,0,185,25,20);//a2
+ ellipse(655,90,0,185,25,20);//a3
+ ellipse(695,90,0,185,25,20);//a4
+ ellipse(710,100,310,80,25,20);//a5
+ ellipse(700,110,200,0,25,20);//a6
+ ellipse(660,120,180,0,25,20);//a7
+ ellipse(620,110,200,0,25,20);//a8
+                                              //ending of cloud 3
+ // bird 1
+     ellipse(153,150,120,240,10,15);
+     ellipse(135,166,390,130,15,15);
+ //bird 2
+           ellipse(135,123,120,240,10,15);
+           ellipse(117,140,390,130,15,15);
+           //bird 3
+                ellipse(363,123,120,240,10,15);
+                ellipse(345,140,390,130,15,15);
+                //bird 4
+                     ellipse(353,150,120,240,10,15);
+                     ellipse(335,166,390,130,15,15);
+                              //sun
+                              arc(450,78,0,171,30);
+                              line(423,70,405,64);
+                              line(424,63,407,52);
+                              line(427,56,414,41);
+                              line(432,51,425,34);
+                              line(438,48,432,26);
+ line(445,49,442,23);
+ line(452,47,452,21);
+ line(459,50,462,23);
+ line(465,52,472,26);
+ line(471,54,482,31);
+ line(474,60,489,40);
+ line(477,64,498,51);
+ line(480,70,504,61);
+  //starting of home 2
+                                                          line(640,450,780,450);//base line of home
+                                                          line(640,450,640,410);//first line
+                                                          line(680,450,680,410);//second line
+                                                          line(640,410,660,385);// 1 slant line
+                                                          line(660,385,680,410);// 2 slant line
+                     
+																					 //road lines of home
+                         line(640,450,650,490);//1 line
+                         line(680,450,690,490);//2 line
+                                       
+                                       //triangle horizontal lines
+                                             line(660,385,780,385);//top roof line
+                                             line(640,410,750,410);//triangle bottom line
+                                             line(780,385,750,410);//slant line of roof
+                                             line(780,385,780,450);//end line of home
+                                             line(750,410,750,450);//second line of home
+                         //door of home
+                             line(640,410,660,420);
+                             line(640,450,660,440);
+                             line(660,440,660,420);
+          //short line betweein roads
+ line(660,450,662,460);
+ line(662,463,664,472);
+ line(664,474,668,484);
+                //window in home
+ line(700,435,700,425);
+ line(700,425,730,425);
+ line(730,425,730,435);
+ line(730,435,700,435);
+               //lines in between window
+ line(715,425,715,435);
+ line(700,430,730,430);
+            //circle in triangle 
+ circle(660,400,5);
+         //ending of home 2
+                                                                             //starting of building 2
+ line(1000,450,1000,330);//vetical line 1 left
+ line(1100,450,1100,330);//vertical line 2 right
+ line(1000,450,1100,450);//horizontal line bottom
+ line(1000,330,1100,330);//horizontal line upward
+ //building door starting
+ line(1035,450,1035,410);//vetical line left
+ line(1065,450,1065,410);//vetical line right
+ line(1035,410,1065,410);//horizonatl line upward
+ line(1035,450,1045,440);//slant line from bottom
+ line(1035,410,1045,420);//salnt line from upward
+ line(1045,440,1045,420);//connecting line of door
+ //building road starting
+ line(1035,450,1045,490);//left line
+ line(1065,450,1075,490);//right line
+ //short line in between building road
+ line(1049,450,1053,460);//l1
+ line(1053,463,1056,472);//l2
+ line(1056,474,1060,484);//l3
+ //lines in between building vetically
+ line(1020,330,1020,450);//l1
+ line(1040,330,1040,410);//l2
+ line(1060,330,1060,410);//l3
+ line(1080,330,1080,450);//l4
+ //horizontal lines in between building
+ line(1000,430,1035,430);//l1
+ line(1065,430,1100,430);//l1 a
+ line(1000,410,1100,410);//l2
+ line(1000,390,1100,390);//l3
+ line(1000,370,1100,370);//l4
+ line(1000,350,1100,350);//l5
+                                                        // ending of building 2
+                                     // 3rd small tree after building 1
+ line(600,490,600,450);//left line
+ line(610,490,610,450);//right line
+ ellipse(600,440,130,310,15,15);//arc 1
+ ellipse(595,420,110,245,15,15);//arc 2
+ ellipse(600,410,0,185,15,15);//arc 3
+ ellipse(610,420,310,100,15,15);//arc 4
+ ellipse(610,435,250,20,15,15);//arc 5
+                                  //ending of small tree after building 1
+                    //small tree after big tree 1
+  line(920,490,920,450);//left line
+ line(930,490,930,450);//right line
+ ellipse(920,440,130,310,15,15);//arc 1
+ ellipse(915,420,110,245,15,15);//arc 2
+ ellipse(920,410,0,185,15,15);//arc 3
+ ellipse(930,420,310,100,15,15);//arc 4
+ ellipse(930,435,250,20,15,15);//arc 5
+                //emding of small tree after big tree 1
+                            //starting of small tree 2 after big tree
+ line(960,490,960,450);//left line
+ line(970,490,970,450);//right line
+ ellipse(960,440,130,310,15,15);//arc 1
+ ellipse(955,420,110,245,15,15);//arc 2
+ ellipse(960,410,0,185,15,15);//arc 3
+ ellipse(970,420,310,100,15,15);//arc 4
+ ellipse(970,435,250,20,15,15);//arc 5
+                            //ending of small tree 2 after big tree
+                                   //small tree after bilding 2
+  line(1120,490,1120,450);//left line
+ line(1130,490,1130,450);//right line
+ ellipse(1120,440,130,310,15,15);//arc 1
+ ellipse(1115,420,110,245,15,15);//arc 2
+ ellipse(1120,410,0,185,15,15);//arc 3
+ ellipse(1130,420,310,100,15,15);//arc 4
+ ellipse(1130,435,250,20,15,15);//arc 5
+           //ending of after building 2
+                  //starting of 2 small tree after building
+ line(1150,490,1150,450);//left line
+ line(1160,490,1160,450);//right line
+ ellipse(1150,440,130,310,15,15);//arc 1
+ ellipse(1145,420,110,245,15,15);//arc 2
+ ellipse(1150,410,0,185,15,15);//arc 3
+ ellipse(1160,420,310,100,15,15);//arc 4
+ ellipse(1160,435,250,20,15,15);//arc 5
+                     //ending of 2 small tree after building
+                       //tree 3 after building 2
+ line(1190,490,1190,450);//left line
+ line(1200,490,1200,450);//right line
+ ellipse(1190,440,130,310,15,15);//arc 1
+ ellipse(1185,420,110,245,15,15);//arc 2
+ ellipse(1190,410,0,185,15,15);//arc 3
+ ellipse(1200,420,310,100,15,15);//arc 4
+ ellipse(1200,435,250,20,15,15);//arc 5
+                       //ending tree 3 after building 2
+                                //starting tree 4 after building 2
+ line(1240,490,1240,450);//left line
+ line(1250,490,1250,450);//right line
+ ellipse(1240,440,130,310,15,15);//arc 1
+ ellipse(1235,420,110,245,15,15);//arc 2
+ ellipse(1240,410,0,185,15,15);//arc 3
+ ellipse(1250,420,310,100,15,15);//arc 4
+ ellipse(1250,435,250,20,15,15);//arc 5
+                                 //ending tree 4 after building 2
+ 																
+ 																
+ 																
+ 																// introrectangle
+ 																setfillstyle(10,1);
+ 																	bar(890,55,1250,250);
+ 																 
+																 
+ 																// INTRODUCTION TEXT ABOUT PROJECT
+														    	outtextxy(1020,55,"ABOUT  PROJECT ! ");
+														    	outtextxy(935,75,"WELCOME TO CITY-TRAFFIC-LIGHT-PROJECT");
+														    	outtextxy(903,135,"MADE BY : [ DAKSH KHOSLA AND HARPAL SINGH]") ;
+ 																
+																		
+			
+			
+			
+																				//traffic code on moving object
+			
+														//trafic light bottom line
+												line(1464,179,1464,300);
+											
+												//bottom to right line
+												line(1600,299,1464,299);//traffic line 
+												line(0,490,1600,490);// road line 
+												line(0,760,1600,760);//road down
+											
+													// dot lines start
+										
+											//road dot line with color
+												setfillstyle(1,DARKGRAY);
+														bar(0,620,75,635);
+														
+													
+													setfillstyle(1,DARKGRAY);
+													bar(95,620,170,635);
+												
+													bar(190,620,265,635);
+												
+													bar(285,620,360,635);
+												
+													bar(380,620,455,635);
+														bar(400,620,475,635);
+															bar(495,620,570,635);
+																bar(590,620,665,635);
+																	bar(685,620,760,635);
+																		bar(780,620,855,635);
+																			bar(875,620,950,635);
+																				bar(970,620,1045,635);
+																					bar(1065,620,1140,635);
+																					bar(1160,620,1235,635);
+																					bar(1255,620,1330,635);
+																					bar(1350,620,1425,635);
+																					bar(1445,620,1520,635);
+																					bar(1540,620,1615,635);// road line fineshed
+																				
+												
+	//light
+															rectangle(1490,30,1440,180);
+	// circle lights
+															circle(1465,55,25);
+															circle(1465,105,25);
+															circle(1465,155,25);
+															
+																setfillstyle(1,GREEN);
+														floodfill(1465,155,WHITE);
+															outtextxy(1457,150,"GO");
+															
+																sprintf(q,"RED LIGHT COME SHORTLY ",c);
+															outtextxy(1250,150,q);
+																
+												}
+												
+												
+													setfillstyle(1,BLACK);//TURN GO GREEN TO BLACK
+													floodfill(1465,155,WHITE);
+														//TURn GREEN COUNTDOWN TO BLACK											
+													setfillstyle(1,BLACK);
+													floodfill(1250,150,WHITE);
+													delay(500);
+													// car run code finished
+													
+																						// cycle code start for moving
+													
+													
+												
+													
+													
+													
+													
+													
+													while(1)
+													
+														{
+												
+															setactivepage(page);
+															setvisualpage(1-page);
+															cleardevice();
+																	{
+																				
+																				//  trees and building object code
+      		// big tree
+ line(0,490,1500,490);//bottom line
+ line(830,490,830,430);//first line
+ line(870,490,870,430);//second line
+ ellipse(813,410,130,310,20,30);//e1
+ ellipse(800,365,90,285,15,30);//e2
+ ellipse(820,340,30,185,28,30);//e3
+ ellipse(860,325,0,185,25,20);//e4
+ ellipse(880,340,310,100,25,30);//e5
+ ellipse(887,380,280,80,30,30);//e6
+ ellipse(877,410,250,20,30,30);//e7
+ //big tree ending
+
+ //small tree starting from back side of car
+ line(80,490,80,450);
+ line(90,490,90,450);
+ ellipse(80,440,130,310,15,15);//e1
+ ellipse(75,420,110,245,15,15);//e2
+ ellipse(80,410,0,185,15,15);//e3
+ ellipse(90,420,310,100,15,15);//e4
+ ellipse(90,435,250,20,15,15);//e5
+ //ending of small tree
+ //starting of home
+ line(140,450,280,450);//base line of home
+ line(140,450,140,410);//first line
+ line(180,450,180,410);//second line
+ line(140,410,160,385);// 1 slant line
+ line(160,385,180,410);// 2 slant line
+ //road lines of home
+ line(140,450,150,490);//1 line
+ line(180,450,190,490);//2 line
+ //triangle horizontal lines
+ line(160,385,280,385);//top roof line
+ line(140,410,250,410);//triangle bottom line
+ line(280,385,250,410);//slant line of roof
+ line(280,385,280,450);//end line of home
+ line(250,410,250,450);//second line of home
+ //door of home
+ line(140,410,160,420);
+ line(140,450,160,440);
+ line(160,440,160,420);
+ //short line betweein roads
+ line(160,450,162,460);
+ line(162,463,164,472);
+ line(164,474,168,484);
+ //window in home
+ line(200,435,200,425);
+ line(200,425,230,425);
+ line(230,425,230,435);
+ line(230,435,200,435);
+ //lines in between window
+ line(215,425,215,435);
+ line(200,430,230,430);
+ //circle in triangle 
+ circle(160,400,5);
+ //small tree afer home 
+ line(300,490,300,450);
+ line(310,490,310,450);
+ ellipse(300,440,130,310,15,15);
+ ellipse(295,420,110,245,15,15);
+ ellipse(300,410,0,185,15,15);
+ ellipse(310,420,310,100,15,15);
+ ellipse(310,435,250,20,15,15);
+ // 2nd small tree after home 
+ line(360,490,360,450);//left line
+ line(370,490,370,450);//right line
+ ellipse(360,440,130,310,15,15);//arc 1
+ ellipse(355,420,110,245,15,15);//arc 2
+ ellipse(360,410,0,185,15,15);//arc 3
+ ellipse(370,420,310,100,15,15);//arc 4
+ ellipse(370,435,250,20,15,15);//arc 5
+ //starting of building
+ line(400,450,400,330);//vetical line 1 left
+ line(500,450,500,330);//vertical line 2 right
+ line(400,450,500,450);//horizontal line bottom
+ line(400,330,500,330);//horizontal line upward
+ //building door starting
+ line(435,450,435,410);//vetical line left
+ line(465,450,465,410);//vetical line right
+ line(435,410,465,410);//horizonatl line upward
+ line(435,450,445,440);//slant line from bottom
+ line(435,410,445,420);//salnt line from upward
+ line(445,440,445,420);//connecting line of door
+ //building road starting
+ line(435,450,445,490);//left line
+ line(465,450,475,490);//right line
+ //short line in between building road
+ line(449,450,453,460);//l1
+ line(453,463,456,472);//l2
+ line(456,474,460,484);//l3
+ //lines in between building vetically
+ line(420,330,420,450);//l1
+ line(440,330,440,410);//l2
+ line(460,330,460,410);//l3
+ line(480,330,480,450);//l4
+ //horizontal lines in between building
+ line(400,430,435,430);//l1
+ line(465,430,500,430);//l1 a
+ line(400,410,500,410);//l2
+ line(400,390,500,390);//l3
+ line(400,370,500,370);//l4
+ line(400,350,500,350);//l5
+ //small tree after building
+ line(520,490,520,450);//left line
+ line(530,490,530,450);//right line
+ ellipse(520,440,130,310,15,15);//arc 1
+ ellipse(515,420,110,245,15,15);//arc 2
+ ellipse(520,410,0,185,15,15);//arc 3
+ ellipse(530,420,310,100,15,15);//arc 4
+ ellipse(530,435,250,20,15,15);//arc 5
+ //starting of cloud 1 making from car side
+ ellipse(150,100,110,290,20,20);//arc 1 from lest side
+ ellipse(160,90,0,185,25,20);//arc 2
+ ellipse(205,90,0,185,25,20);//a3
+ ellipse(245,90,0,185,25,20);//a4
+ ellipse(260,100,310,80,25,20);//a5
+ ellipse(250,110,200,0,25,20);//a6
+ ellipse(210,120,180,0,25,20);//a7
+ ellipse(170,110,200,0,25,20);//a8
+ //cloud 2
+ ellipse(400,100,110,290,20,20);//a1
+ ellipse(410,90,0,185,25,20);//a2
+ ellipse(455,90,0,185,25,20);//a3
+ ellipse(495,90,0,185,25,20);//a4
+ ellipse(510,100,310,80,25,20);//a5
+ ellipse(500,110,200,0,25,20);//a6
+ ellipse(460,120,180,0,25,20);//a7
+ ellipse(420,110,200,0,25,20);//a8
+ 																// trees and building code finished
+ 																
+ 																    												                                               //grass on road
+ ellipse(20,480,170,230,10,15);//arc 1
+ ellipse(25,480,170,210,10,15);
+ ellipse(10,476,250,20,10,15);//
+ ellipse(40,480,170,230,10,15);
+ ellipse(45,480,170,210,10,15);
+ ellipse(30,476,250,20,10,15);//
+ ellipse(60,480,170,230,10,15);
+ ellipse(65,480,170,210,10,15);
+ ellipse(50,476,250,20,10,15);//
+ //
+ ellipse(75,480,170,230,10,15);//arc 1
+ ellipse(80,480,170,210,10,15);
+ ellipse(65,476,250,20,10,15);//
+ ellipse(95,480,170,230,10,15);
+ ellipse(100,480,170,210,10,15);
+ ellipse(85,476,250,20,10,15);//
+ ellipse(115,480,170,230,10,15);
+ ellipse(120,480,170,210,10,15);
+ ellipse(105,476,250,20,10,15);//
+ ellipse(135,480,170,230,10,15);
+ ellipse(140,480,170,210,10,15);
+ ellipse(125,476,250,20,10,15);//
+ //after home road
+                                    ellipse(210,480,170,230,10,15);//arc 1
+ ellipse(215,480,170,210,10,15);
+                    ellipse(200,476,250,20,10,15);//
+ ellipse(230,480,170,230,10,15);//arc 2
+ ellipse(235,480,170,210,10,15);
+                     ellipse(220,476,250,20,10,15);//
+ ellipse(250,480,170,230,10,15);
+ ellipse(255,480,170,210,10,15);
+                     ellipse(240,476,250,20,10,15);//
+ ellipse(270,480,170,230,10,15);
+ ellipse(275,480,170,210,10,15);
+                      ellipse(260,476,250,20,10,15);//
+ ellipse(290,480,170,230,10,15);
+ ellipse(295,480,170,210,10,15);
+                       ellipse(280,476,250,20,10,15);//
+                                  ellipse(310,480,170,230,10,15);//arc 1
+ ellipse(315,480,170,210,10,15);
+                  ellipse(300,476,250,20,10,15);
+ ellipse(330,480,170,230,10,15);//arc 2
+ ellipse(335,480,170,210,10,15);
+                  ellipse(320,476,250,20,10,15);//
+ ellipse(350,480,170,230,10,15);
+ ellipse(355,480,170,210,10,15);
+                  ellipse(340,476,250,20,10,15);//
+ ellipse(370,480,170,230,10,15);
+ ellipse(375,480,170,210,10,15);
+                  ellipse(360,476,250,20,10,15);//
+ ellipse(390,480,170,230,10,15);
+ ellipse(395,480,170,210,10,15);
+                  ellipse(380,476,250,20,10,15);//
+                                     ellipse(410,480,170,230,10,15);//arc 1
+ ellipse(415,480,170,210,10,15);
+                  ellipse(400,476,250,20,10,15);//
+ ellipse(430,480,170,230,10,15);//arc 2
+ ellipse(435,480,170,210,10,15);
+                   ellipse(420,476,250,20,10,15);//
+                                       ellipse(490,480,170,230,10,15);//arc 1
+ ellipse(495,480,170,210,10,15);
+ ellipse(480,476,250,20,10,15);//
+                                       ellipse(510,480,170,230,10,15);//arc 1
+ ellipse(515,480,170,210,10,15);
+                    ellipse(500,476,250,20,10,15);//
+ ellipse(530,480,170,230,10,15);//arc 2
+ ellipse(535,480,170,210,10,15);
+                    ellipse(520,476,250,20,10,15);//
+ ellipse(550,480,170,230,10,15);
+ ellipse(555,480,170,210,10,15);
+                    ellipse(540,476,250,20,10,15);//
+ ellipse(570,480,170,230,10,15);
+ ellipse(575,480,170,210,10,15);
+                    ellipse(560,476,250,20,10,15);//
+ ellipse(590,480,170,230,10,15);
+ ellipse(595,480,170,210,10,15);
+                    ellipse(580,476,250,20,10,15);//
+ 
+  ellipse(610,480,170,230,10,15);//arc 1
+ ellipse(615,480,170,210,10,15);
+ ellipse(600,476,250,20,10,15);//
+ ellipse(630,480,170,230,10,15);//arc 2
+ ellipse(635,480,170,210,10,15);
+ ellipse(620,476,250,20,10,15);//
+ ellipse(650,480,170,230,10,15);
+ ellipse(655,480,170,210,10,15);
+ ellipse(640,476,250,20,10,15);//
+ ellipse(670,480,170,230,10,15);
+ ellipse(675,480,170,210,10,15);
+ ellipse(660,476,250,20,10,15);//
+ ellipse(690,480,170,230,10,15);
+ ellipse(695,480,170,210,10,15);
+  ellipse(710,480,170,230,10,15);//arc 1
+ ellipse(715,480,170,210,10,15);
+ ellipse(700,476,250,20,10,15);//
+ ellipse(730,480,170,230,10,15);//arc 2
+ ellipse(735,480,170,210,10,15);
+ ellipse(720,476,250,20,10,15);//
+ ellipse(750,480,170,230,10,15);
+ ellipse(755,480,170,210,10,15);
+ ellipse(740,476,250,20,10,15);//
+ ellipse(770,480,170,230,10,15);
+ ellipse(775,480,170,210,10,15);
+ ellipse(760,476,250,20,10,15);//
+ ellipse(790,480,170,230,10,15);
+ ellipse(795,480,170,210,10,15);
+  ellipse(810,480,170,230,10,15);//arc 1
+ ellipse(815,480,170,210,10,15);
+ ellipse(800,476,250,20,10,15);//
+ ellipse(830,480,170,230,10,15);//arc 2
+ ellipse(835,480,170,210,10,15);
+ ellipse(820,476,250,20,10,15);//
+ ellipse(850,480,170,230,10,15);
+ ellipse(855,480,170,210,10,15);
+ ellipse(840,476,250,20,10,15);//
+ ellipse(870,480,170,230,10,15);
+ ellipse(875,480,170,210,10,15);
+ ellipse(860,476,250,20,10,15);//
+ ellipse(890,480,170,230,10,15);
+ ellipse(895,480,170,210,10,15);
+ ellipse(880,476,250,20,10,15);//
+   ellipse(910,480,170,230,10,15);//arc 1
+ ellipse(915,480,170,210,10,15);
+ ellipse(800,476,250,20,10,15);//
+ ellipse(930,480,170,230,10,15);//arc 2
+ ellipse(935,480,170,210,10,15);
+ ellipse(920,476,250,20,10,15);//
+ ellipse(950,480,170,230,10,15);
+ ellipse(955,480,170,210,10,15);
+ ellipse(940,476,250,20,10,15);//
+ ellipse(970,480,170,230,10,15);
+ ellipse(975,480,170,210,10,15);
+ ellipse(960,476,250,20,10,15);//
+ ellipse(990,480,170,230,10,15);
+ ellipse(995,480,170,210,10,15);
+ ellipse(980,476,250,20,10,15);//
+   ellipse(1010,480,170,230,10,15);//arc 1
+ ellipse(1015,480,170,210,10,15);
+ ellipse(1000,476,250,20,10,15);//
+ ellipse(1030,480,170,230,10,15);//arc 2
+ ellipse(1035,480,170,210,10,15);
+ ellipse(1020,476,250,20,10,15);//
+ ellipse(1050,480,170,230,10,15);
+ ellipse(1055,480,170,210,10,15);
+ ellipse(1040,476,250,20,10,15);//
+ ellipse(1070,480,170,230,10,15);
+ ellipse(1075,480,170,210,10,15);
+ ellipse(1060,476,250,20,10,15);//
+ ellipse(1090,480,170,230,10,15);
+ ellipse(1095,480,170,210,10,15);
+ ellipse(1080,476,250,20,10,15);//
+   ellipse(1110,480,170,230,10,15);//arc 1
+ ellipse(1115,480,170,210,10,15);
+ ellipse(1100,476,250,20,10,15);//
+ ellipse(1130,480,170,230,10,15);//arc 2
+ ellipse(1135,480,170,210,10,15);
+ ellipse(1120,476,250,20,10,15);//
+ ellipse(1150,480,170,230,10,15);
+ ellipse(1155,480,170,210,10,15);
+ ellipse(1140,476,250,20,10,15);//
+ ellipse(1170,480,170,230,10,15);
+ ellipse(1175,480,170,210,10,15);
+ ellipse(1160,476,250,20,10,15);//
+ ellipse(1190,480,170,230,10,15);
+ ellipse(1195,480,170,210,10,15);
+ ellipse(1180,476,250,20,10,15);//
+    ellipse(1210,480,170,230,10,15);//arc 1
+ ellipse(1215,480,170,210,10,15);
+ ellipse(1200,476,250,20,10,15);//
+ ellipse(1230,480,170,230,10,15);//arc 2
+ ellipse(1235,480,170,210,10,15);
+ ellipse(1220,476,250,20,10,15);//
+ ellipse(1250,480,170,230,10,15);
+ ellipse(1255,480,170,210,10,15);
+ ellipse(1240,476,250,20,10,15);//
+ ellipse(1270,480,170,230,10,15);
+ ellipse(1275,480,170,210,10,15);
+ ellipse(1260,476,250,20,10,15);//
+ ellipse(1290,480,170,230,10,15);
+ ellipse(1295,480,170,210,10,15);
+ ellipse(1280,476,250,20,10,15);//
+    ellipse(1310,480,170,230,10,15);//arc 1
+ ellipse(1315,480,170,210,10,15);
+ ellipse(1300,476,250,20,10,15);//
+ ellipse(1330,480,170,230,10,15);//arc 2
+ ellipse(1335,480,170,210,10,15);
+ ellipse(1320,476,250,20,10,15);//
+ ellipse(1350,480,170,230,10,15);
+ ellipse(1355,480,170,210,10,15);
+ ellipse(1340,476,250,20,10,15);//
+ ellipse(1370,480,170,230,10,15);
+ ellipse(1375,480,170,210,10,15);
+ ellipse(1360,476,250,20,10,15);//
+ ellipse(1390,480,170,230,10,15);
+ ellipse(1395,480,170,210,10,15);
+ ellipse(1380,476,250,20,10,15);//
+    ellipse(1410,480,170,230,10,15);//arc 1
+ ellipse(1415,480,170,210,10,15);
+ ellipse(1400,476,250,20,10,15);//
+ ellipse(1430,480,170,230,10,15);//arc 2
+ ellipse(1435,480,170,210,10,15);
+ ellipse(1420,476,250,20,10,15);//
+ ellipse(1450,480,170,230,10,15);
+ ellipse(1455,480,170,210,10,15);
+ ellipse(1440,476,250,20,10,15);//
+ ellipse(1470,480,170,230,10,15);
+ ellipse(1475,480,170,210,10,15);
+ ellipse(1460,476,250,20,10,15);//
+ ellipse(1490,480,170,230,10,15);
+ ellipse(1495,480,170,210,10,15);
+ ellipse(1480,476,250,20,10,15);//
+                                      // 2nd small tree after building
+ line(550,490,550,450);//left line
+ line(560,490,560,450);//right line
+ ellipse(550,440,130,310,15,15);//arc 1
+ ellipse(545,420,110,245,15,15);//arc 2
+ ellipse(550,410,0,185,15,15);//arc 3
+ ellipse(560,420,310,100,15,15);//arc 4
+ ellipse(560,435,250,20,15,15);//arc 5
+                                          //ending of second small tree
+                           
+                                             // cloud 3
+ ellipse(600,100,110,290,20,20);//a1
+ ellipse(610,90,0,185,25,20);//a2
+ ellipse(655,90,0,185,25,20);//a3
+ ellipse(695,90,0,185,25,20);//a4
+ ellipse(710,100,310,80,25,20);//a5
+ ellipse(700,110,200,0,25,20);//a6
+ ellipse(660,120,180,0,25,20);//a7
+ ellipse(620,110,200,0,25,20);//a8
+                                              //ending of cloud 3
+ // bird 1
+     ellipse(153,150,120,240,10,15);
+     ellipse(135,166,390,130,15,15);
+ //bird 2
+           ellipse(135,123,120,240,10,15);
+           ellipse(117,140,390,130,15,15);
+           //bird 3
+                ellipse(363,123,120,240,10,15);
+                ellipse(345,140,390,130,15,15);
+                //bird 4
+                     ellipse(353,150,120,240,10,15);
+                     ellipse(335,166,390,130,15,15);
+                              //sun
+                              arc(450,78,0,171,30);
+                              line(423,70,405,64);
+                              line(424,63,407,52);
+                              line(427,56,414,41);
+                              line(432,51,425,34);
+                              line(438,48,432,26);
+ line(445,49,442,23);
+ line(452,47,452,21);
+ line(459,50,462,23);
+ line(465,52,472,26);
+ line(471,54,482,31);
+ line(474,60,489,40);
+ line(477,64,498,51);
+ line(480,70,504,61);
+  //starting of home 2
+                                                          line(640,450,780,450);//base line of home
+                                                          line(640,450,640,410);//first line
+                                                          line(680,450,680,410);//second line
+                                                          line(640,410,660,385);// 1 slant line
+                                                          line(660,385,680,410);// 2 slant line
+                     
+																					 //road lines of home
+                         line(640,450,650,490);//1 line
+                         line(680,450,690,490);//2 line
+                                       
+                                       //triangle horizontal lines
+                                             line(660,385,780,385);//top roof line
+                                             line(640,410,750,410);//triangle bottom line
+                                             line(780,385,750,410);//slant line of roof
+                                             line(780,385,780,450);//end line of home
+                                             line(750,410,750,450);//second line of home
+                         //door of home
+                             line(640,410,660,420);
+                             line(640,450,660,440);
+                             line(660,440,660,420);
+          //short line betweein roads
+ line(660,450,662,460);
+ line(662,463,664,472);
+ line(664,474,668,484);
+                //window in home
+ line(700,435,700,425);
+ line(700,425,730,425);
+ line(730,425,730,435);
+ line(730,435,700,435);
+               //lines in between window
+ line(715,425,715,435);
+ line(700,430,730,430);
+            //circle in triangle 
+ circle(660,400,5);
+         //ending of home 2
+                                                                             //starting of building 2
+ line(1000,450,1000,330);//vetical line 1 left
+ line(1100,450,1100,330);//vertical line 2 right
+ line(1000,450,1100,450);//horizontal line bottom
+ line(1000,330,1100,330);//horizontal line upward
+ //building door starting
+ line(1035,450,1035,410);//vetical line left
+ line(1065,450,1065,410);//vetical line right
+ line(1035,410,1065,410);//horizonatl line upward
+ line(1035,450,1045,440);//slant line from bottom
+ line(1035,410,1045,420);//salnt line from upward
+ line(1045,440,1045,420);//connecting line of door
+ //building road starting
+ line(1035,450,1045,490);//left line
+ line(1065,450,1075,490);//right line
+ //short line in between building road
+ line(1049,450,1053,460);//l1
+ line(1053,463,1056,472);//l2
+ line(1056,474,1060,484);//l3
+ //lines in between building vetically
+ line(1020,330,1020,450);//l1
+ line(1040,330,1040,410);//l2
+ line(1060,330,1060,410);//l3
+ line(1080,330,1080,450);//l4
+ //horizontal lines in between building
+ line(1000,430,1035,430);//l1
+ line(1065,430,1100,430);//l1 a
+ line(1000,410,1100,410);//l2
+ line(1000,390,1100,390);//l3
+ line(1000,370,1100,370);//l4
+ line(1000,350,1100,350);//l5
+                                                        // ending of building 2
+                                     // 3rd small tree after building 1
+ line(600,490,600,450);//left line
+ line(610,490,610,450);//right line
+ ellipse(600,440,130,310,15,15);//arc 1
+ ellipse(595,420,110,245,15,15);//arc 2
+ ellipse(600,410,0,185,15,15);//arc 3
+ ellipse(610,420,310,100,15,15);//arc 4
+ ellipse(610,435,250,20,15,15);//arc 5
+                                  //ending of small tree after building 1
+                    //small tree after big tree 1
+  line(920,490,920,450);//left line
+ line(930,490,930,450);//right line
+ ellipse(920,440,130,310,15,15);//arc 1
+ ellipse(915,420,110,245,15,15);//arc 2
+ ellipse(920,410,0,185,15,15);//arc 3
+ ellipse(930,420,310,100,15,15);//arc 4
+ ellipse(930,435,250,20,15,15);//arc 5
+                //emding of small tree after big tree 1
+                            //starting of small tree 2 after big tree
+ line(960,490,960,450);//left line
+ line(970,490,970,450);//right line
+ ellipse(960,440,130,310,15,15);//arc 1
+ ellipse(955,420,110,245,15,15);//arc 2
+ ellipse(960,410,0,185,15,15);//arc 3
+ ellipse(970,420,310,100,15,15);//arc 4
+ ellipse(970,435,250,20,15,15);//arc 5
+                            //ending of small tree 2 after big tree
+                                   //small tree after bilding 2
+  line(1120,490,1120,450);//left line
+ line(1130,490,1130,450);//right line
+ ellipse(1120,440,130,310,15,15);//arc 1
+ ellipse(1115,420,110,245,15,15);//arc 2
+ ellipse(1120,410,0,185,15,15);//arc 3
+ ellipse(1130,420,310,100,15,15);//arc 4
+ ellipse(1130,435,250,20,15,15);//arc 5
+           //ending of after building 2
+                  //starting of 2 small tree after building
+ line(1150,490,1150,450);//left line
+ line(1160,490,1160,450);//right line
+ ellipse(1150,440,130,310,15,15);//arc 1
+ ellipse(1145,420,110,245,15,15);//arc 2
+ ellipse(1150,410,0,185,15,15);//arc 3
+ ellipse(1160,420,310,100,15,15);//arc 4
+ ellipse(1160,435,250,20,15,15);//arc 5
+                     //ending of 2 small tree after building
+                       //tree 3 after building 2
+ line(1190,490,1190,450);//left line
+ line(1200,490,1200,450);//right line
+ ellipse(1190,440,130,310,15,15);//arc 1
+ ellipse(1185,420,110,245,15,15);//arc 2
+ ellipse(1190,410,0,185,15,15);//arc 3
+ ellipse(1200,420,310,100,15,15);//arc 4
+ ellipse(1200,435,250,20,15,15);//arc 5
+                       //ending tree 3 after building 2
+                                //starting tree 4 after building 2
+ line(1240,490,1240,450);//left line
+ line(1250,490,1250,450);//right line
+ ellipse(1240,440,130,310,15,15);//arc 1
+ ellipse(1235,420,110,245,15,15);//arc 2
+ ellipse(1240,410,0,185,15,15);//arc 3
+ ellipse(1250,420,310,100,15,15);//arc 4
+ ellipse(1250,435,250,20,15,15);//arc 5
+                                 //ending tree 4 after building 2
+ 																
+ 																
+ 																
+ 																
+ 																
+ 																				
+																				 	// intro rectangle
+																								setfillstyle(11,RED);
+																							bar(890,55,1240,250);
+ 																 
+															 
+ 																// INTRODUCTION TEXT ABOUT PROJECT
+ 																			outtextxy(1040,65," NOTE -) ");
+ 																			outtextxy(905,90,"To MOVE BICYCLE On ROAD IN LEFT DIRECTION ");
+ 																			outtextxy(905,115,"PRESS LEFT <- ARROW KEY ");
+ 																	     	outtextxy(1060,140,"AND");
+ 															 		    	outtextxy(905,165,"To MOVE BICYCLE On ROAD IN RIGHT DIRECTION ");
+ 																			outtextxy(905,190,"PRESS RIGHT -> ARROW KEY ");
+ 																			outtextxy(905,215,"TO EXIT THE SCREEN PRESS < ENTER > ");
+																				 
+																				 
+																				 
+																				 			
+																			//traffic code on moving object
+			
+														//trafic light bottom line
+												line(1464,179,1464,300);
+											
+												//bottom to right line
+												line(1600,299,1464,299);//traffic line 
+												line(0,490,1600,490);// road line 
+												line(0,760,1600,760);//road down
+											
+													// dot lines start
+										
+											//road dot line with color
+													setfillstyle(1,DARKGRAY);
+														bar(0,620,75,635);
+														
+													
+													setfillstyle(1,DARKGRAY);
+													bar(95,620,170,635);
+												
+													bar(190,620,265,635);
+												
+													bar(285,620,360,635);
+												
+													bar(380,620,455,635);
+														bar(400,620,475,635);
+															bar(495,620,570,635);
+																bar(590,620,665,635);
+																	bar(685,620,760,635);
+																		bar(780,620,855,635);
+																			bar(875,620,950,635);
+																				bar(970,620,1045,635);
+																					bar(1065,620,1140,635);
+																					bar(1160,620,1235,635);
+																					bar(1255,620,1330,635);
+																					bar(1350,620,1425,635);
+																					bar(1445,620,1520,635);
+																					bar(1540,620,1615,635);// road line fineshed
+																				
+												
+	//light
+															rectangle(1490,30,1440,180);
+	// circle lights
+															circle(1465,55,25);
+															circle(1465,105,25);
+															circle(1465,155,25);
+															
+																setfillstyle(1,GREEN);
+														floodfill(1465,155,WHITE);
+															outtextxy(1457,150,"GO");
+																sprintf(cy,"RED LIGHT COME SHORTLY ",c);
+															outtextxy(1250,150,cy);
+												
+															
+												}
+															
+													// circle move loop
+													
+													
+													for(int cl=0; cl<=20;cl++)
+													{
+											
+									circle(circle_poss,735,cl);//second circle
+									
+      																								
+    								circle(circle_posf,735,cl);  	//first circle
+    									
+								  			
+												  	}
+								  						//circle move loop finished					
+								  						
+								  						//line move loop
+								  						
+								  						for (int ln=0; ln<=20; ln++) {
+								  							
+													  	line(linetop_x1 , 690,linetop_x2,690);	//line rectangle cycle
+													  	line(lineright_x1 , 690,lineright_x2,735);			//linerectangle cycle
+														line(linebotm_x1 , 735,linebotm_x2,735);   //line rectangle cycle
+														line(lineleft_x1 ,735,lineleft_x2,690);  // line rectangle cycle
+								  						line(linehandleleft_x1 , 735,linehandleleft_x2,660); // line move from first circle
+														line(linehandletop_x1,660,linehandletop_x2,660);	//line move to handle				  												  							
+								  						line(lineseat_x1,690,lineseat_x2,678);//seat upper line
+														line(lineseatver_x1 ,678,lineseatver_x2 ,678);//seat vertical line 		
+														  }
+								  	
+						  if(GetAsyncKeyState(VK_RIGHT)) {
+						  	
+						  	circle_poss+=10;
+						  	
+						  	
+						  	circle_posf+=10;
+						  
+						  	linetop_x1+=10;
+						  	linetop_x2+=10;
+						  	lineright_x1+=10;
+						  	lineright_x2+=10;
+						  	linebotm_x1+=10;
+						  	linebotm_x2+=10;
+						  	lineleft_x1+=10;
+						  	lineleft_x2+=10;
+						  	linehandleleft_x1+=10;
+						  	linehandleleft_x2+=10;
+						  	linehandletop_x1+=10;
+						  	linehandletop_x2+=10;
+						  	lineseat_x1+=10;
+						  	lineseat_x2+=10;
+						  	lineseatver_x1+=10;
+						  	lineseatver_x2+=10;
+						  	
+								}
+								
+						  else if(GetAsyncKeyState(VK_LEFT)) {
+						  
+						    circle_poss-=10;
+						    
+						  	circle_posf-=10;
+						  	
+						  	linetop_x1-=10;
+						  	linetop_x2-=10;
+						  	lineright_x1-=10;
+						  	lineright_x2-=10;
+						  	linebotm_x1-=10;
+						  	linebotm_x2-=10;
+						  	lineleft_x1-=10;
+						  	lineleft_x2-=10;
+						  	linehandleleft_x1-=10;
+						  	linehandleleft_x2-=10;
+						  	linehandletop_x1-=10;
+						  	linehandletop_x2-=10;
+						  	lineseat_x1-=10;
+						  	lineseat_x2-=10;
+						  	lineseatver_x1-=10;
+						  	lineseatver_x2-=10;
+      								}     					
+													  
+								if(GetAsyncKeyState(VK_RETURN))
+								return 0;
+										// cycle finished
+											delay(20);
+											page=1-page;
+								}
+										
+			goto d;						
+	getch();	
+	return 0;
+}
+
+
+	
+
